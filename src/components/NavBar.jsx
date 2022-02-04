@@ -7,13 +7,13 @@ function NavBar() {
       <h1>Jose Leal</h1>
       <ul className="nav">
         <li>
-          <Link To="/Home">Home</Link>
+          <Link to="/About">About</Link>
         </li>
         <li>
-          <Link To="/About">About</Link>
+          <Link to="/ColorPicker">Color Picker</Link>
         </li>
         <li>
-          <Link To="/ColorPicker">Color Picker</Link>
+          <Link to="/Home">Home</Link>
         </li>
       </ul>
     </div>
