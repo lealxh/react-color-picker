@@ -6,6 +6,14 @@
   padding: 4px;
   display: flex;
 }
+.colorpicker-title {
+  flex: 0.5;
+  display: flex;
+}
+.colorpicker-title div {
+  color: white;
+  margin: auto;
+}
 .canvas {
   background-color: blue;
   max-height: 400px;

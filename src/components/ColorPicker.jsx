@@ -24,6 +24,9 @@ function ColorPicker(props) {
 
   return (
     <div className="colorpicker">
+      <div className="colorpicker-title">
+        <div>Pick a color</div>
+      </div>
       <div className="canvas" style={{ backgroundColor: getSelectedColor }}>
         <div className="colors-tag">{getSelectedColorTag}</div>
       </div>
