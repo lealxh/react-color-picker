@@ -4,7 +4,15 @@ function About() {
   return (
     <>
       <h1>About me</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quia alias distinctio consequuntur saepe hic voluptates quasi reiciendis sunt labore, officia molestias repudiandae obcaecati corrupti porro commodi quae iure quaerat!</p>
+      <p>Full stack programmer with more than 8 years of experience developing and maintaining web applications using frameworks such as .net C#, angular, react.js and web services (SOAP & API REST) for clients in the banking and investment area.</p>
+      <br />
+      <a target={"_blank"} className="button" href="https://www.linkedin.com/in/jose-gregorio-leal-sanchez/?locale=en_US">
+        LinkedIn
+      </a>
+      <br />
+      <a target={"_blank"} className="button" href="https://github.com/lealxh/">
+        Github
+      </a>
     </>
   )
 }

@@ -12,9 +12,6 @@ function NavBar() {
         <li>
           <Link to="/ColorPicker">Color Picker</Link>
         </li>
-        <li>
-          <Link to="/Home">Home</Link>
-        </li>
       </ul>
     </div>
   )

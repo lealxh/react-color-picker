@@ -50,3 +50,14 @@ body {
   font-size: 1.18rem;
   line-height: 1.6;
 }
+
+.button {
+  margin-bottom: 5px;
+  background-color: #004d40;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1.18rem;
+  display: inline-block;
+}
