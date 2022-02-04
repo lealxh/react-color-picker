@@ -4,7 +4,7 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 }
 .header {
-  background-color: #283593;
+  background-color: #004d40;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -28,11 +28,11 @@ body {
 }
 
 .nav a:hover {
-  color: #c5cae9;
+  color: #e0f2f1;
   transform: rotate(6deg);
 }
 .hero {
-  background-color: #c5cee9;
+  background-color: #e0f2f1;
   padding: 60px 45px;
   display: flex;
   justify-content: center;

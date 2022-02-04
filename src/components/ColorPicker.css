@@ -1,0 +1,37 @@
+.colorpicker {
+  width: 400px;
+  height: 400px;
+  background-color: gray;
+  flex-direction: column;
+  padding: 4px;
+  display: flex;
+}
+.canvas {
+  background-color: blue;
+  max-height: 400px;
+  flex: 5;
+  display: flex;
+}
+
+.colors {
+  flex: 2;
+  margin-top: 4px;
+  display: flex;
+}
+.colors-inner {
+  flex: 1;
+  display: flex;
+  cursor: pointer;
+}
+.colors-tag {
+  opacity: 0.3;
+  background-color: black;
+  border-width: 1px;
+  border-style: solid;
+  border-color: white;
+  padding: 2px;
+  color: white;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -14,10 +14,10 @@ function App() {
       <div className="hero">
         <div className="hero-inner">
           <Routes>
-            <Route path="/" element={<Home />}></Route>
+            <Route exact path="/" element={<Home />}></Route>
             <Route path="/Home" element={<Home />}></Route>
             <Route path="/About" element={<About />}></Route>
-            <Route path="/ColorPicker" element={<ColorPicker />}></Route>
+            <Route path="/ColorPicker" element={<ColorPicker selectedColor={"white"} Colors={["#ff1744", "#d500f9", "#00b0ff", "#00e676", "#ffea00"]} />}></Route>
           </Routes>
         </div>
       </div>
