@@ -1,0 +1,52 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.header {
+  background-color: #283593;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 45px;
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease-out;
+}
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.nav li {
+  margin-left: 20px;
+}
+
+.nav a:hover {
+  color: #c5cae9;
+  transform: rotate(6deg);
+}
+.hero {
+  background-color: #c5cee9;
+  padding: 60px 45px;
+  display: flex;
+  justify-content: center;
+}
+.hero-inner {
+  max-width: 760px;
+}
+
+.hero h1 {
+  font-weight: normal;
+  font-size: 4rem;
+  margin: 0;
+}
+.hero p {
+  font-size: 1.18rem;
+  line-height: 1.6;
+}
