@@ -1,7 +1,7 @@
 .colorpicker {
   width: 400px;
   height: 400px;
-  background-color: gray;
+  background-color: white;
   flex-direction: column;
   padding: 4px;
   display: flex;
@@ -11,25 +11,32 @@
   display: flex;
 }
 .colorpicker-title div {
-  color: white;
+  color: black;
   margin: auto;
 }
 .canvas {
   background-color: blue;
-  max-height: 400px;
+  max-height: 300px;
   flex: 5;
+  margin: 5px;
   display: flex;
 }
 
 .colors {
-  flex: 2;
-  margin-top: 4px;
+  max-width: 400px;
+
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .colors-inner {
-  flex: 1;
-  display: flex;
+  width: 40px;
+  height: 35px;
   cursor: pointer;
+  text-align: center;
+  margin: 5px;
 }
 .colors-tag {
   opacity: 0.3;
@@ -42,4 +49,24 @@
   margin-top: auto;
   margin-left: auto;
   margin-right: auto;
+}
+.controls-row {
+  display: flex;
+  max-width: 400px;
+  margin: 5px;
+  flex-direction: row;
+}
+.controls-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.controls-column input {
+  flex: 1;
+  max-width: 60px;
+  margin: auto;
+}
+.controls-label {
+  flex: 1;
+  margin: auto;
 }

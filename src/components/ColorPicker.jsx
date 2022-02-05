@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import "./ColorPicker.css"
+
 function ColorPicker(props) {
   const [getColors, setColors] = useState(props.Colors)
   const [getSelectedColor, setSelectedColor] = useState(props.selectedColor)
@@ -30,14 +31,28 @@ function ColorPicker(props) {
       <div className="canvas" style={{ backgroundColor: getSelectedColor }}>
         <div className="colors-tag">{getSelectedColorTag}</div>
       </div>
+      <div className="controls-row">
+        <div className="controls-column">
+          <input type="text" />
+          <div className="controls-label">Hex</div>
+        </div>
+        <div className="controls-column">
+          <input type="text" />
+          <div className="controls-label">R</div>
+        </div>
+        <div className="controls-column">
+          <input type="text" />
+          <div className="controls-label">G</div>
+        </div>
+        <div className="controls-column">
+          <input type="text" />
+          <div className="controls-label">B</div>
+        </div>
+      </div>
 
       <div className="colors">
         {getColors.map(colorValue => {
-          return (
-            <div key={colorValue} onClick={handleClick} className="colors-inner" style={{ backgroundColor: colorValue }}>
-              <div className="colors-tag">{colorValue}</div>
-            </div>
-          )
+          return <div key={colorValue} onClick={handleClick} className="colors-inner" style={{ backgroundColor: colorValue }}></div>
         })}
       </div>
     </div>
