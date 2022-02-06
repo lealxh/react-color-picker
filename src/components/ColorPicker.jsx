@@ -81,6 +81,14 @@ function ColorPicker(props) {
 
       case "HexInput":
         draft.SelectedColor.hex = action.value
+        for (let i = 0; i < draft.ColorButtons.length; i++) {
+          if (draft.ColorButtons[i].color.hex == draft.SelectedColor.hex) {
+            draft.ColorButtons[i].style = { backgroundColor: draft.ColorButtons[i].color.hex, boxShadow: "black 0px 0px 5px" }
+          } else {
+            draft.ColorButtons[i].style = { backgroundColor: draft.ColorButtons[i].color.hex }
+          }
+        }
+
         return
 
       case "RGBToHex":
@@ -117,7 +125,7 @@ function ColorPicker(props) {
           <input
             value={state.SelectedColor.hex}
             onChange={e => {
-              dispatch({ type: "hexInput", value: e.target.value })
+              dispatch({ type: "HexInput", value: e.target.value })
             }}
             id="hexField"
             autoComplete="off"
