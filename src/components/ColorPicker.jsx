@@ -94,6 +94,14 @@ function ColorPicker(props) {
       case "RGBToHex":
         try {
           draft.SelectedColor.hex = ConvertRGBtoHex(draft.SelectedColor.r, draft.SelectedColor.g, draft.SelectedColor.b)
+
+          for (let i = 0; i < draft.ColorButtons.length; i++) {
+            if (draft.ColorButtons[i].color.hex == draft.SelectedColor.hex) {
+              draft.ColorButtons[i].style = { backgroundColor: draft.ColorButtons[i].color.hex, boxShadow: "black 0px 0px 5px" }
+            } else {
+              draft.ColorButtons[i].style = { backgroundColor: draft.ColorButtons[i].color.hex }
+            }
+          }
         } catch (error) {}
 
         return
