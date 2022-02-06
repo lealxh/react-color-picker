@@ -3,11 +3,6 @@ import { useImmerReducer } from "use-immer"
 import "./ColorPicker.css"
 
 function ColorPicker(props) {
-  const hexField = useRef(null)
-  const rField = useRef(null)
-  const gField = useRef(null)
-  const bField = useRef(null)
-
   const InitialState = {
     SelectedColor: {
       hex: props.selectedColor,
@@ -32,18 +27,28 @@ function ColorPicker(props) {
   const [state, dispatch] = useImmerReducer(reducer, InitialState)
 
   useEffect(() => {
-    dispatch({ type: "hexToRGB", value: state.SelectedColor.hex })
+    const delay = setTimeout(() => {
+      dispatch({ type: "hexToRGB", value: state.SelectedColor.hex })
+    }, 1000)
+    return () => {
+      clearTimeout(delay)
+    }
   }, [state.SelectedColor.hex])
+
+  useEffect(() => {
+    const delay = setTimeout(() => {
+      dispatch({ type: "RGBToHex" })
+    }, 1000)
+    return () => {
+      clearTimeout(delay)
+    }
+  }, [state.SelectedColor.r, state.SelectedColor.g, state.SelectedColor.b])
 
   function reducer(draft, action) {
     switch (action.type) {
       case "Click":
-        draft.SelectedColor = {
-          hex: action.value,
-          r: "",
-          g: "",
-          b: ""
-        }
+        draft.SelectedColor.hex = action.value
+
         for (let i = 0; i < draft.ColorButtons.length; i++) {
           if (draft.ColorButtons[i].color.hex == draft.SelectedColor.hex) {
             draft.ColorButtons[i].style = { backgroundColor: draft.ColorButtons[i].color.hex, boxShadow: "black 0px 0px 10px" }
@@ -54,12 +59,8 @@ function ColorPicker(props) {
 
         return
 
-      case "TextEdit":
-        console.log("Input: " + action.value)
-        return
-
       case "hexToRGB":
-        draft.SelectedColor.hex = action.value
+        //draft.SelectedColor.hex = action.value
         try {
           var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(draft.SelectedColor.hex)
           draft.SelectedColor.r = parseInt(result[1], 16)
@@ -69,11 +70,21 @@ function ColorPicker(props) {
 
         return
 
+      case "RGBInput":
+        try {
+          if (action.value.r) draft.SelectedColor.r = parseInt(action.value.r)
+          if (action.value.g) draft.SelectedColor.g = parseInt(action.value.g)
+          if (action.value.b) draft.SelectedColor.b = parseInt(action.value.b)
+        } catch (error) {}
+
+        return
+
+      case "HexInput":
+        draft.SelectedColor.hex = action.value
+        return
+
       case "RGBToHex":
         try {
-          if (action.value.r) draft.SelectedColor.r = action.value.r
-          if (action.value.g) draft.SelectedColor.g = action.value.g
-          if (action.value.b) draft.SelectedColor.b = action.value.b
           draft.SelectedColor.hex = ConvertRGBtoHex(draft.SelectedColor.r, draft.SelectedColor.g, draft.SelectedColor.b)
         } catch (error) {}
 
@@ -89,7 +100,8 @@ function ColorPicker(props) {
   }
 
   function ConvertRGBtoHex(red, green, blue) {
-    return "#" + ColorToHex(red) + ColorToHex(green) + ColorToHex(blue)
+    const hexadecimal = "#" + ColorToHex(red) + ColorToHex(green) + ColorToHex(blue)
+    return hexadecimal
   }
 
   return (
@@ -105,7 +117,7 @@ function ColorPicker(props) {
           <input
             value={state.SelectedColor.hex}
             onChange={e => {
-              dispatch({ type: "hexToRGB", value: e.target.value })
+              dispatch({ type: "hexInput", value: e.target.value })
             }}
             id="hexField"
             autoComplete="off"
@@ -120,7 +132,7 @@ function ColorPicker(props) {
             name="rField"
             value={state.SelectedColor.r}
             onChange={e => {
-              if (testValueRGB(e.target.value)) dispatch({ type: "RGBToHex", value: { r: e.target.value } })
+              if (testValueRGB(e.target.value)) dispatch({ type: "RGBInput", value: { r: e.target.value } })
             }}
           />
           <div className="controls-label">R</div>
@@ -132,7 +144,7 @@ function ColorPicker(props) {
             name="gField"
             value={state.SelectedColor.g}
             onChange={e => {
-              if (testValueRGB(e.target.value)) dispatch({ type: "RGBToHex", value: { g: e.target.value } })
+              if (testValueRGB(e.target.value)) dispatch({ type: "RGBInput", value: { g: e.target.value } })
             }}
           />
           <div className="controls-label">G</div>
@@ -144,7 +156,7 @@ function ColorPicker(props) {
             type="text"
             value={state.SelectedColor.b}
             onChange={e => {
-              if (testValueRGB(e.target.value)) dispatch({ type: "RGBToHex", value: { b: e.target.value } })
+              if (testValueRGB(e.target.value)) dispatch({ type: "RGBInput", value: { b: e.target.value } })
             }}
           />
           <div className="controls-label">B</div>
