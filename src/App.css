@@ -4,7 +4,7 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 }
 .header {
-  background-color: #004d40;
+  background-color: #1687a7;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -32,7 +32,7 @@ body {
   transform: rotate(6deg);
 }
 .hero {
-  background-color: #e0f2f1;
+  background-color: #d3e0ea;
   padding: 60px 45px;
   display: flex;
   justify-content: center;
@@ -56,7 +56,7 @@ body {
 
 .button {
   margin-bottom: 5px;
-  background-color: #004d40;
+  background-color: #1687a7;
   color: #fff;
   text-decoration: none;
   padding: 12px 20px;
