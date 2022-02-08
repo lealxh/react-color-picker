@@ -2,9 +2,12 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Source Sans Pro", sans-serif;
+
+  background: url("images/background.jpg") center center no-repeat;
+  background-size: cover;
 }
 .header {
-  background-color: #1687a7;
+  background-color: #6d664e;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -31,11 +34,16 @@ body {
   color: #e0f2f1;
   transform: rotate(6deg);
 }
+body {
+  background-color: #b9babc;
+}
 .hero {
-  background-color: #d3e0ea;
-  padding: 60px 45px;
+  padding: 30px 30px;
+  margin-left: 100px;
   display: flex;
-  justify-content: center;
+
+  justify-content: left;
+  min-height: 1000;
 }
 .hero-inner {
   max-width: 760px;
@@ -47,20 +55,26 @@ body {
 .hero h1 {
   font-weight: normal;
   font-size: 2rem;
+  color: #343b43;
   margin: 0;
 }
 .hero p {
   font-size: 1.18rem;
+  color: #343b43;
   line-height: 1.6;
 }
 
 .button {
   margin-bottom: 5px;
-  background-color: #1687a7;
+  background-color: #6d664e;
   color: #fff;
   text-decoration: none;
   padding: 12px 20px;
   border-radius: 8px;
   font-size: 1.18rem;
   display: inline-block;
+}
+
+.bgImage {
+  /*opacity: 0.2;*/
 }
