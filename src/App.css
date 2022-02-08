@@ -39,11 +39,8 @@ body {
 }
 .hero {
   padding: 30px 30px;
-  margin-left: 100px;
   display: flex;
-
-  justify-content: left;
-  min-height: 1000;
+  justify-content: center;
 }
 .hero-inner {
   max-width: 760px;
