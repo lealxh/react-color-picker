@@ -6,9 +6,7 @@ function NavBar() {
     <div className="header">
       <h1>Color Picker</h1>
       <ul className="nav">
-        <li>
-          <Link to="/ColorPicker">Color Picker</Link>
-        </li>
+        <li></li>
         <li>
           <Link to="/About">About</Link>
         </li>

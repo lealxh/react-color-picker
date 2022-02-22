@@ -44,9 +44,11 @@ body {
 .hero {
   display: flex;
   justify-content: center;
+  min-height: 500px;
 }
 .hero-inner {
   max-width: 760px;
+  margin-top: auto;
 }
 .header h1 {
   font-weight: normal;
