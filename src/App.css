@@ -37,8 +37,11 @@ body {
 body {
   background-color: #b9babc;
 }
+.about-me {
+  background-color: #b9babc;
+  padding: 30px;
+}
 .hero {
-  padding: 30px 30px;
   display: flex;
   justify-content: center;
 }
