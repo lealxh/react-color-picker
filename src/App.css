@@ -1,11 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&family=Roboto&display=swap");
+
 body {
   padding: 0;
   margin: 0;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Oswald", sans-serif;
+}
 
+.bgImage {
+  height: 100vh;
+  width: 100%;
   background: url("images/background.jpg") center center no-repeat;
   background-size: cover;
 }
+
 .header {
   background-color: #6d664e;
   color: white;
@@ -38,15 +45,17 @@ body {
   background-color: #b9babc;
 }
 .about-me {
-  background-color: #b9babc;
+  background-color: #b9babca1;
   padding: 30px;
 }
 .hero {
   display: flex;
   justify-content: center;
+  min-height: 500px;
 }
 .hero-inner {
   max-width: 760px;
+  margin-top: auto;
 }
 .header h1 {
   font-weight: normal;
@@ -75,6 +84,8 @@ body {
   display: inline-block;
 }
 
-.bgImage {
-  /*opacity: 0.2;*/
+.flex-end-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
 }
